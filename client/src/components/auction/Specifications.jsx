@@ -17,7 +17,7 @@ export default function Specifications({ specs }) {
   if (!specs) return null;
 
   return (
-    <div className="mt-8 glass rounded-2xl p-6 border border-slate-200">
+    <div className="glass rounded-2xl p-6 border border-slate-200">
       <h2 className="text-xl font-bold text-slate-900 mb-6">Specifications</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">

@@ -164,6 +164,9 @@ export default function AuctionDetail() {
               <p className="text-sm text-slate-600 leading-relaxed">{bike.description}</p>
             </div>
           )}
+
+          {/* Specifications */}
+          <Specifications specs={bike.specifications} />
         </div>
 
         {/* RIGHT: Details, Bidding Panel + History (2 cols) */}
@@ -218,9 +221,6 @@ export default function AuctionDetail() {
           <BidHistory bids={bids} />
         </div>
       </div>
-
-      {/* Specifications Full Width */}
-      <Specifications specs={bike.specifications} />
     </div>
   );
 }
