@@ -36,8 +36,8 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               {/* Text Content */}
               <div className="p-10 lg:p-16 relative z-10 text-white">
-                <span className="inline-block py-1 px-3 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-6">
-                  Premium Bidding Platform
+                <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-6">
+                  <RiMotorbikeFill className="text-sm" /> India's #1 Bike Auction Platform
                 </span>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
                   Live Motorcycle<br />
