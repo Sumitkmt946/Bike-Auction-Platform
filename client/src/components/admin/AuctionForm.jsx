@@ -61,7 +61,7 @@ export default function AuctionForm({ initialData, bikes = [], onSubmit, loading
     <form onSubmit={handleSubmit} className="space-y-5">
       {/* Bike Select */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
           Select Bike <span className="text-red-400">*</span>
         </label>
         <select
@@ -82,7 +82,7 @@ export default function AuctionForm({ initialData, bikes = [], onSubmit, loading
 
       {/* Start Time */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
           Start Time <span className="text-red-400">*</span>
         </label>
         <input
@@ -97,7 +97,7 @@ export default function AuctionForm({ initialData, bikes = [], onSubmit, loading
 
       {/* End Time */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
           End Time <span className="text-red-400">*</span>
         </label>
         <input

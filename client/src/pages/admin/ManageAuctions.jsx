@@ -74,10 +74,10 @@ export default function ManageAuctions() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <Link to="/admin" className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors mb-2">
+          <Link to="/admin" className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900 transition-colors mb-2">
             <RiArrowLeftLine /> Back to Admin
           </Link>
-          <h1 className="text-3xl font-extrabold text-white">
+          <h1 className="text-3xl font-extrabold text-slate-900">
             Manage <span className="gradient-text">Auctions</span>
           </h1>
         </div>
@@ -90,7 +90,7 @@ export default function ManageAuctions() {
       {auctions.length === 0 ? (
         <div className="text-center py-20 glass rounded-2xl">
           <RiAuctionLine className="text-6xl text-slate-700 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-slate-400 mb-2">No auctions created yet</h3>
+          <h3 className="text-xl font-bold text-slate-600 mb-2">No auctions created yet</h3>
           <Link to="/admin/auctions/create" className="btn-primary inline-flex items-center gap-2 mt-4">
             <RiAddLine /> Create Auction
           </Link>
@@ -100,7 +100,7 @@ export default function ManageAuctions() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="text-left text-xs text-slate-500 uppercase tracking-wider border-b border-slate-700/30">
+                <tr className="text-left text-xs text-slate-500 uppercase tracking-wider border-b border-slate-300/30">
                   <th className="px-5 py-4 font-medium">Bike</th>
                   <th className="px-5 py-4 font-medium">Status</th>
                   <th className="px-5 py-4 font-medium hidden sm:table-cell">Start</th>
@@ -119,7 +119,7 @@ export default function ManageAuctions() {
                     <tr key={auction._id} className="hover:bg-white/[0.02] transition-colors">
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-800 shrink-0">
+                          <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-50 shrink-0">
                             {bike.images?.[0] ? (
                               <img src={bike.images[0]} alt={bike.name} className="w-full h-full object-cover" />
                             ) : (
@@ -129,7 +129,7 @@ export default function ManageAuctions() {
                             )}
                           </div>
                           <div>
-                            <p className="font-medium text-white text-sm">{bike.name || 'N/A'}</p>
+                            <p className="font-medium text-slate-900 text-sm">{bike.name || 'N/A'}</p>
                             <p className="text-xs text-slate-500">{bike.brand}</p>
                           </div>
                         </div>
@@ -140,10 +140,10 @@ export default function ManageAuctions() {
                           {getStatusLabel(status)}
                         </span>
                       </td>
-                      <td className="px-5 py-4 text-xs text-slate-400 hidden sm:table-cell">
+                      <td className="px-5 py-4 text-xs text-slate-600 hidden sm:table-cell">
                         {formatDate(auction.startTime)}
                       </td>
-                      <td className="px-5 py-4 text-xs text-slate-400 hidden md:table-cell">
+                      <td className="px-5 py-4 text-xs text-slate-600 hidden md:table-cell">
                         {formatDate(auction.endTime)}
                       </td>
                       <td className="px-5 py-4 text-sm font-semibold text-accent-400">
@@ -190,7 +190,7 @@ export default function ManageAuctions() {
                           )}
                           <Link
                             to={`/auctions/${auction._id}`}
-                            className="p-2 rounded-lg bg-slate-700/30 text-slate-400 border border-slate-600/20 hover:bg-slate-700/50 hover:text-white transition-all text-sm"
+                            className="p-2 rounded-lg bg-slate-100/30 text-slate-600 border border-slate-600/20 hover:bg-slate-100/50 hover:text-slate-900 transition-all text-sm"
                             title="View"
                           >
                             <RiEyeLine />

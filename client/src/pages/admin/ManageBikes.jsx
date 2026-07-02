@@ -48,10 +48,10 @@ export default function ManageBikes() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <Link to="/admin" className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors mb-2">
+          <Link to="/admin" className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900 transition-colors mb-2">
             <RiArrowLeftLine /> Back to Admin
           </Link>
-          <h1 className="text-3xl font-extrabold text-white">
+          <h1 className="text-3xl font-extrabold text-slate-900">
             Manage <span className="gradient-text">Bikes</span>
           </h1>
         </div>
@@ -64,7 +64,7 @@ export default function ManageBikes() {
       {bikes.length === 0 ? (
         <div className="text-center py-20 glass rounded-2xl">
           <RiMotorbikeFill className="text-6xl text-slate-700 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-slate-400 mb-2">No bikes added yet</h3>
+          <h3 className="text-xl font-bold text-slate-600 mb-2">No bikes added yet</h3>
           <p className="text-sm text-slate-500 mb-6">Start by adding your first motorcycle</p>
           <Link to="/admin/bikes/create" className="btn-primary inline-flex items-center gap-2">
             <RiAddLine /> Add Bike
@@ -75,7 +75,7 @@ export default function ManageBikes() {
           {bikes.map((bike) => (
             <div key={bike._id} className="glass rounded-2xl overflow-hidden group">
               {/* Image */}
-              <div className="h-40 bg-slate-800 relative overflow-hidden">
+              <div className="h-40 bg-slate-50 relative overflow-hidden">
                 {bike.images?.[0] ? (
                   <img
                     src={bike.images[0]}
@@ -92,14 +92,14 @@ export default function ManageBikes() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="text-lg font-bold text-white mb-1">{bike.name}</h3>
-                <p className="text-sm text-slate-400">
+                <h3 className="text-lg font-bold text-slate-900 mb-1">{bike.name}</h3>
+                <p className="text-sm text-slate-600">
                   {bike.brand} · {bike.model} · {bike.year}
                 </p>
                 <p className="text-lg font-bold gradient-text mt-2">{formatCurrency(bike.startingPrice)}</p>
 
                 {/* Actions */}
-                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-slate-700/30">
+                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-slate-300/30">
                   <Link
                     to={`/admin/bikes/${bike._id}/edit`}
                     className="flex-1 btn-secondary flex items-center justify-center gap-1.5 text-sm py-2"

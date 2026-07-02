@@ -65,7 +65,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
     <form onSubmit={handleSubmit} className="space-y-5">
       {/* Name */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
           Bike Name <span className="text-red-400">*</span>
         </label>
         <input
@@ -82,7 +82,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
       {/* Brand + Model */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Brand <span className="text-red-400">*</span>
           </label>
           <input
@@ -96,7 +96,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
           {errors.brand && <p className="text-xs text-red-400 mt-1">{errors.brand}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Model <span className="text-red-400">*</span>
           </label>
           <input
@@ -114,7 +114,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
       {/* Year + Price */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Year <span className="text-red-400">*</span>
           </label>
           <input
@@ -129,7 +129,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
           {errors.year && <p className="text-xs text-red-400 mt-1">{errors.year}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Starting Price (₹) <span className="text-red-400">*</span>
           </label>
           <input
@@ -148,7 +148,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
 
       {/* Description */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
           Description <span className="text-red-400">*</span>
         </label>
         <textarea
@@ -164,7 +164,7 @@ export default function BikeForm({ initialData, onSubmit, loading }) {
 
       {/* Images */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-1.5">
+        <label className="block text-sm font-medium text-slate-700 mb-1.5 flex items-center gap-1.5">
           <RiImageLine /> Image URLs (comma-separated) <span className="text-red-400">*</span>
         </label>
         <textarea

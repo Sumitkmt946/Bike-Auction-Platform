@@ -5,7 +5,7 @@ export default function BidHistory({ bids = [], highestBidId }) {
   if (!bids || bids.length === 0) {
     return (
       <div className="glass rounded-2xl p-6">
-        <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+        <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
           <RiTimeLine className="text-accent-400" />
           Bid History
         </h3>
@@ -26,11 +26,11 @@ export default function BidHistory({ bids = [], highestBidId }) {
   return (
     <div className="glass rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+        <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
           <RiTimeLine className="text-accent-400" />
           Bid History
         </h3>
-        <span className="text-xs text-slate-500 bg-slate-800/50 px-2.5 py-1 rounded-full">
+        <span className="text-xs text-slate-500 bg-slate-50/50 px-2.5 py-1 rounded-full">
           {bids.length} bid{bids.length !== 1 ? 's' : ''}
         </span>
       </div>
@@ -48,7 +48,7 @@ export default function BidHistory({ bids = [], highestBidId }) {
               className={`flex items-center justify-between p-3 rounded-xl transition-all duration-300 ${
                 isHighest && index === 0
                   ? 'bg-gradient-to-r from-accent-500/10 to-amber-500/5 border border-accent-500/20'
-                  : 'bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50'
+                  : 'bg-slate-50/30 border border-slate-300/20 hover:bg-slate-50/50'
               }`}
             >
               <div className="flex items-center gap-3">
@@ -56,8 +56,8 @@ export default function BidHistory({ bids = [], highestBidId }) {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
                     isHighest && index === 0
-                      ? 'bg-gradient-to-br from-accent-500 to-accent-400 text-white'
-                      : 'bg-slate-700 text-slate-400'
+                      ? 'bg-gradient-to-br from-accent-500 to-accent-400 text-slate-900'
+                      : 'bg-slate-100 text-slate-600'
                   }`}
                 >
                   {isHighest && index === 0 ? (
@@ -68,7 +68,7 @@ export default function BidHistory({ bids = [], highestBidId }) {
                 </div>
 
                 <div>
-                  <p className={`text-sm font-medium ${isHighest && index === 0 ? 'text-accent-400' : 'text-white'}`}>
+                  <p className={`text-sm font-medium ${isHighest && index === 0 ? 'text-accent-400' : 'text-slate-900'}`}>
                     {bidderName}
                   </p>
                   <p className="text-xs text-slate-500">
@@ -77,7 +77,7 @@ export default function BidHistory({ bids = [], highestBidId }) {
                 </div>
               </div>
 
-              <p className={`text-sm font-bold ${isHighest && index === 0 ? 'text-accent-400' : 'text-slate-300'}`}>
+              <p className={`text-sm font-bold ${isHighest && index === 0 ? 'text-accent-400' : 'text-slate-700'}`}>
                 {formatCurrency(bid.amount)}
               </p>
             </div>

@@ -16,8 +16,8 @@ export default function StaticPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16 fade-in min-h-[60vh]">
       <div className="glass rounded-2xl p-8 md:p-12">
-        <h1 className="text-3xl font-bold text-white mb-6 gradient-text">{data.title}</h1>
-        <div className="text-slate-300 leading-relaxed text-lg">
+        <h1 className="text-3xl font-bold text-slate-900 mb-6 gradient-text">{data.title}</h1>
+        <div className="text-slate-700 leading-relaxed text-lg">
           <p>{data.body}</p>
         </div>
       </div>

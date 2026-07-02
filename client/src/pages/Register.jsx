@@ -49,16 +49,16 @@ export default function Register() {
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-400 shadow-lg shadow-accent-500/25 mb-4">
-              <RiMotorbikeFill className="text-2xl text-white" />
+              <RiMotorbikeFill className="text-2xl text-slate-900" />
             </div>
-            <h1 className="text-2xl font-bold text-white">Create Account</h1>
-            <p className="text-sm text-slate-400 mt-1">Join the motorcycle auction community</p>
+            <h1 className="text-2xl font-bold text-slate-900">Create Account</h1>
+            <p className="text-sm text-slate-600 mt-1">Join the motorcycle auction community</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Full Name</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Full Name</label>
               <div className="relative">
                 <RiUserLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -75,7 +75,7 @@ export default function Register() {
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
               <div className="relative">
                 <RiMailLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -92,7 +92,7 @@ export default function Register() {
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Password</label>
               <div className="relative">
                 <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -107,7 +107,7 @@ export default function Register() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 transition-colors"
                 >
                   {showPassword ? <RiEyeOffLine /> : <RiEyeLine />}
                 </button>
@@ -116,7 +116,7 @@ export default function Register() {
 
             {/* Confirm Password */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Confirm Password</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Confirm Password</label>
               <div className="relative">
                 <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -147,7 +147,7 @@ export default function Register() {
             </button>
           </form>
 
-          <p className="text-center text-sm text-slate-400 mt-6">
+          <p className="text-center text-sm text-slate-600 mt-6">
             Already have an account?{' '}
             <Link to="/login" className="text-accent-400 hover:text-accent-300 font-medium transition-colors">
               Sign in

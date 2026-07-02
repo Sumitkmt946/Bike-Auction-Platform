@@ -41,14 +41,14 @@ export default function Home() {
 
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-              <span className="text-white">Live </span>
+              <span className="text-slate-900">Live </span>
               <span className="gradient-text">Motorcycle</span>
               <br />
-              <span className="text-white">Auctions</span>
+              <span className="text-slate-900">Auctions</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Experience the thrill of real-time bidding on the world's most exclusive and sought-after motorcycles. 
               Whether you are a passionate collector searching for a rare classic or a speed enthusiast chasing the 
               latest high-performance superbike, our platform connects you with unparalleled two-wheeled masterpieces. 
@@ -92,7 +92,7 @@ export default function Home() {
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <stat.icon className={`text-3xl ${stat.color} mx-auto mb-2`} />
-              <p className="text-2xl sm:text-3xl font-extrabold text-white">{stat.value}</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-slate-900">{stat.value}</p>
               <p className="text-sm text-slate-500 mt-1">{stat.label}</p>
             </div>
           ))}
@@ -105,10 +105,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Featured <span className="gradient-text">Auctions</span>
             </h2>
-            <p className="text-slate-400 mt-1">Active auctions you can bid on right now</p>
+            <p className="text-slate-600 mt-1">Active auctions you can bid on right now</p>
           </div>
           <Link
             to="/auctions"
@@ -122,11 +122,11 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="glass rounded-2xl overflow-hidden animate-pulse">
-                <div className="h-48 bg-slate-800" />
+                <div className="h-48 bg-slate-50" />
                 <div className="p-5 space-y-3">
-                  <div className="h-5 bg-slate-800 rounded w-3/4" />
-                  <div className="h-4 bg-slate-800 rounded w-1/2" />
-                  <div className="h-8 bg-slate-800 rounded w-1/3" />
+                  <div className="h-5 bg-slate-50 rounded w-3/4" />
+                  <div className="h-4 bg-slate-50 rounded w-1/2" />
+                  <div className="h-8 bg-slate-50 rounded w-1/3" />
                 </div>
               </div>
             ))}
@@ -140,7 +140,7 @@ export default function Home() {
         ) : (
           <div className="text-center py-16 glass rounded-2xl">
             <RiAuctionLine className="text-5xl text-slate-700 mx-auto mb-3" />
-            <p className="text-lg text-slate-400">No active auctions right now</p>
+            <p className="text-lg text-slate-600">No active auctions right now</p>
             <p className="text-sm text-slate-500 mt-1">Check back soon for new listings!</p>
           </div>
         )}
@@ -158,10 +158,10 @@ export default function Home() {
          ══════════════════════════════════════════════════════════════ */}
       <section id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-24">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
             How It <span className="gradient-text">Works</span>
           </h2>
-          <p className="text-slate-400 mt-2">Get started in three simple steps</p>
+          <p className="text-slate-600 mt-2">Get started in three simple steps</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -208,8 +208,8 @@ export default function Home() {
                 <item.icon className={`text-3xl ${item.iconColor}`} />
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

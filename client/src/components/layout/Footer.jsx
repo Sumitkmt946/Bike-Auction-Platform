@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-slate-950 pt-16 pb-8 border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-slate-50 pt-16 pb-8 border-t border-white/5 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-accent-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -27,12 +27,12 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold gradient-text tracking-tight">BikeAuction</span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-600 text-sm leading-relaxed max-w-xs">
               The premier destination for motorcycle enthusiasts to discover, bid on, and win exclusive two-wheeled masterpieces from around the globe.
             </p>
             <div className="flex items-center gap-4">
               {[RiTwitterXFill, RiInstagramFill, RiGithubFill, RiLinkedinFill].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-accent-400 hover:border-accent-500/50 hover:bg-accent-500/10 transition-all duration-300 hover:-translate-y-1">
+                <a key={i} href="#" className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-accent-400 hover:border-accent-500/50 hover:bg-accent-500/10 transition-all duration-300 hover:-translate-y-1">
                   <Icon className="text-lg" />
                 </a>
               ))}
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-6 tracking-wide">Quick Links</h3>
+            <h3 className="text-slate-900 font-semibold mb-6 tracking-wide">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { name: 'Home', path: '/' },
@@ -51,8 +51,8 @@ export default function Footer() {
                 { name: 'How it Works', path: '/#how-it-works' }
               ].map((link, i) => (
                 <li key={i}>
-                  <Link to={link.path} className="text-slate-400 hover:text-accent-400 text-sm flex items-center gap-2 group transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-accent-400 transition-colors" />
+                  <Link to={link.path} className="text-slate-600 hover:text-accent-400 text-sm flex items-center gap-2 group transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-100 group-hover:bg-accent-400 transition-colors" />
                     {link.name}
                   </Link>
                 </li>
@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* Legal & Support */}
           <div>
-            <h3 className="text-white font-semibold mb-6 tracking-wide">Support</h3>
+            <h3 className="text-slate-900 font-semibold mb-6 tracking-wide">Support</h3>
             <ul className="space-y-3">
               {[
                 { name: 'Help Center', path: '/info/help' },
@@ -72,8 +72,8 @@ export default function Footer() {
                 { name: 'Contact Us', path: '/info/contact' }
               ].map((link, i) => (
                 <li key={i}>
-                  <Link to={link.path} className="text-slate-400 hover:text-accent-400 text-sm flex items-center gap-2 group transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-accent-400 transition-colors" />
+                  <Link to={link.path} className="text-slate-600 hover:text-accent-400 text-sm flex items-center gap-2 group transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-100 group-hover:bg-accent-400 transition-colors" />
                     {link.name}
                   </Link>
                 </li>
@@ -83,19 +83,19 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-white font-semibold mb-6 tracking-wide">Stay Updated</h3>
-            <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+            <h3 className="text-slate-900 font-semibold mb-6 tracking-wide">Stay Updated</h3>
+            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
               Subscribe to our newsletter to get the latest auction alerts and motorcycle news.
             </p>
             <form className="relative" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 pl-4 pr-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/50 transition-all"
+                className="w-full bg-white border border-slate-200 rounded-xl py-3 pl-4 pr-12 text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/50 transition-all"
               />
               <button 
                 type="submit"
-                className="absolute right-1.5 top-1.5 bottom-1.5 w-9 rounded-lg bg-accent-500 text-white flex items-center justify-center hover:bg-accent-600 transition-colors shadow-lg shadow-accent-500/20"
+                className="absolute right-1.5 top-1.5 bottom-1.5 w-9 rounded-lg bg-accent-500 text-slate-900 flex items-center justify-center hover:bg-accent-600 transition-colors shadow-lg shadow-accent-500/20"
               >
                 <RiArrowRightLine />
               </button>
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500 text-center md:text-left">
             &copy; {new Date().getFullYear()} BikeAuction. All rights reserved.
           </p>

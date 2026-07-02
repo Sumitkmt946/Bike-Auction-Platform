@@ -62,10 +62,10 @@ export default function Dashboard() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
       {/* Welcome */}
       <div className="mb-8">
-        <h1 className="text-3xl font-extrabold text-white">
+        <h1 className="text-3xl font-extrabold text-slate-900">
           Welcome back, <span className="gradient-text">{user?.name || 'User'}</span>
         </h1>
-        <p className="text-slate-400 mt-1">Track your bids and auction activity</p>
+        <p className="text-slate-600 mt-1">Track your bids and auction activity</p>
       </div>
 
       {/* Stats */}
@@ -78,8 +78,8 @@ export default function Dashboard() {
           <div key={i} className={`glass rounded-2xl p-5 bg-gradient-to-br ${stat.bg} border ${stat.border}`}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wider font-medium">{stat.label}</p>
-                <p className="text-3xl font-extrabold text-white mt-1">{stat.value}</p>
+                <p className="text-xs text-slate-600 uppercase tracking-wider font-medium">{stat.label}</p>
+                <p className="text-3xl font-extrabold text-slate-900 mt-1">{stat.value}</p>
               </div>
               <stat.icon className={`text-3xl ${stat.color}`} />
             </div>
@@ -89,12 +89,12 @@ export default function Dashboard() {
 
       {/* My Bids */}
       <div>
-        <h2 className="text-xl font-bold text-white mb-4">My Bids</h2>
+        <h2 className="text-xl font-bold text-slate-900 mb-4">My Bids</h2>
 
         {auctions.length === 0 ? (
           <div className="text-center py-16 glass rounded-2xl">
             <RiAuctionLine className="text-5xl text-slate-700 mx-auto mb-3" />
-            <p className="text-lg text-slate-400">No bids placed yet</p>
+            <p className="text-lg text-slate-600">No bids placed yet</p>
             <p className="text-sm text-slate-500 mt-1 mb-4">Start bidding on active auctions!</p>
             <Link to="/auctions" className="btn-primary inline-flex items-center gap-2">
               Browse Auctions <RiArrowRightLine />
@@ -130,7 +130,7 @@ export default function Dashboard() {
                 >
                   <div className="flex items-center gap-4">
                     {/* Image */}
-                    <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-slate-800">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-slate-50">
                       {bike.images?.[0] ? (
                         <img src={bike.images[0]} alt={bike.name} className="w-full h-full object-cover" />
                       ) : (
@@ -141,7 +141,7 @@ export default function Dashboard() {
                     </div>
 
                     <div>
-                      <p className="font-semibold text-white group-hover:text-accent-400 transition-colors">
+                      <p className="font-semibold text-slate-900 group-hover:text-accent-400 transition-colors">
                         {bike.name || 'Auction'}
                       </p>
                       <p className="text-xs text-slate-500">

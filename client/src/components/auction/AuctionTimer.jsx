@@ -49,7 +49,7 @@ export default function AuctionTimer({ endTime, startTime, status }) {
     return (
       <div className="flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-slate-500" />
-        <span className="text-sm font-medium text-slate-400">Auction Ended</span>
+        <span className="text-sm font-medium text-slate-600">Auction Ended</span>
       </div>
     );
   }
@@ -67,9 +67,9 @@ export default function AuctionTimer({ endTime, startTime, status }) {
           <TimeUnit value={days} label="d" urgent={isUrgent} />
         )}
         <TimeUnit value={hours} label="h" urgent={isUrgent} />
-        <span className={`text-lg font-bold ${isUrgent ? 'text-red-400' : 'text-slate-400'}`}>:</span>
+        <span className={`text-lg font-bold ${isUrgent ? 'text-red-400' : 'text-slate-600'}`}>:</span>
         <TimeUnit value={minutes} label="m" urgent={isUrgent} />
-        <span className={`text-lg font-bold ${isUrgent ? 'text-red-400' : 'text-slate-400'}`}>:</span>
+        <span className={`text-lg font-bold ${isUrgent ? 'text-red-400' : 'text-slate-600'}`}>:</span>
         <TimeUnit value={seconds} label="s" urgent={isUrgent} />
       </div>
     </div>
@@ -79,9 +79,9 @@ export default function AuctionTimer({ endTime, startTime, status }) {
 function TimeUnit({ value, label, urgent }) {
   return (
     <div className={`flex items-baseline gap-0.5 px-2 py-1 rounded-lg ${
-      urgent ? 'bg-red-500/10 border border-red-500/20' : 'bg-slate-800/50'
+      urgent ? 'bg-red-500/10 border border-red-500/20' : 'bg-slate-50/50'
     }`}>
-      <span className={`text-lg font-bold tabular-nums ${urgent ? 'text-red-400' : 'text-white'}`}>
+      <span className={`text-lg font-bold tabular-nums ${urgent ? 'text-red-400' : 'text-slate-900'}`}>
         {String(value).padStart(2, '0')}
       </span>
       <span className={`text-[10px] font-medium ${urgent ? 'text-red-500' : 'text-slate-500'}`}>

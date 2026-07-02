@@ -6,6 +6,7 @@ import { useSocket } from '../context/SocketContext';
 import AuctionTimer from '../components/auction/AuctionTimer';
 import BidPanel from '../components/auction/BidPanel';
 import BidHistory from '../components/auction/BidHistory';
+import Specifications from '../components/auction/Specifications';
 import Loader from '../components/common/Loader';
 import { formatCurrency, formatDate, getStatusColor, getStatusLabel } from '../utils/helpers';
 import toast from 'react-hot-toast';
@@ -104,7 +105,7 @@ export default function AuctionDetail() {
   if (!auction) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <p className="text-xl text-slate-400">Auction not found</p>
+        <p className="text-xl text-slate-600">Auction not found</p>
       </div>
     );
   }
@@ -126,8 +127,8 @@ export default function AuctionDetail() {
               {getStatusLabel(status)}
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white">{bike.name || 'Auction'}</h1>
-          <p className="text-slate-400 mt-1">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">{bike.name || 'Auction'}</h1>
+          <p className="text-slate-600 mt-1">
             {bike.brand} {bike.model && `· ${bike.model}`} {bike.year && `· ${bike.year}`}
           </p>
         </div>
@@ -144,7 +145,7 @@ export default function AuctionDetail() {
           {/* Image Gallery */}
           <div className="glass rounded-2xl overflow-hidden">
             {/* Main Image */}
-            <div className="relative aspect-[16/10] bg-slate-900">
+            <div className="relative aspect-[16/10] bg-white">
               {images.length > 0 ? (
                 <img
                   src={images[selectedImage]}
@@ -170,7 +171,7 @@ export default function AuctionDetail() {
                     className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === i
                         ? 'border-accent-500 shadow-lg shadow-accent-500/20'
-                        : 'border-slate-700 hover:border-slate-500 opacity-60 hover:opacity-100'
+                        : 'border-slate-300 hover:border-slate-500 opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img src={img} alt={`${bike.name} ${i + 1}`} className="w-full h-full object-cover" />
@@ -182,7 +183,7 @@ export default function AuctionDetail() {
 
           {/* Bike Details */}
           <div className="glass rounded-2xl p-6 space-y-5">
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <RiInformationLine className="text-accent-400" />
               Bike Details
             </h2>
@@ -194,17 +195,17 @@ export default function AuctionDetail() {
                 { label: 'Year', value: bike.year || 'N/A' },
                 { label: 'Starting Price', value: formatCurrency(bike.startingPrice) },
               ].map((item, i) => (
-                <div key={i} className="bg-slate-800/30 rounded-xl p-3 border border-slate-700/20">
+                <div key={i} className="bg-slate-50/30 rounded-xl p-3 border border-slate-300/20">
                   <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">{item.label}</p>
-                  <p className="text-sm font-semibold text-white mt-1">{item.value}</p>
+                  <p className="text-sm font-semibold text-slate-900 mt-1">{item.value}</p>
                 </div>
               ))}
             </div>
 
             {bike.description && (
               <div>
-                <h3 className="text-sm font-semibold text-slate-300 mb-2">Description</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{bike.description}</p>
+                <h3 className="text-sm font-semibold text-slate-700 mb-2">Description</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{bike.description}</p>
               </div>
             )}
 
@@ -213,14 +214,14 @@ export default function AuctionDetail() {
                 <RiCalendarLine className="text-accent-400" />
                 <div>
                   <p className="text-slate-500">Start Time</p>
-                  <p className="text-white font-medium">{formatDate(auction.startTime)}</p>
+                  <p className="text-slate-900 font-medium">{formatDate(auction.startTime)}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <RiCalendarLine className="text-accent-400" />
                 <div>
                   <p className="text-slate-500">End Time</p>
-                  <p className="text-white font-medium">{formatDate(auction.endTime)}</p>
+                  <p className="text-slate-900 font-medium">{formatDate(auction.endTime)}</p>
                 </div>
               </div>
             </div>
@@ -234,7 +235,7 @@ export default function AuctionDetail() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">Starting Price</p>
-                <p className="text-lg font-bold text-slate-300">{formatCurrency(bike.startingPrice)}</p>
+                <p className="text-lg font-bold text-slate-700">{formatCurrency(bike.startingPrice)}</p>
               </div>
               <div className="text-right">
                 <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">
@@ -254,6 +255,9 @@ export default function AuctionDetail() {
           <BidHistory bids={bids} />
         </div>
       </div>
+
+      {/* Specifications Full Width */}
+      <Specifications specs={bike.specifications} />
     </div>
   );
 }

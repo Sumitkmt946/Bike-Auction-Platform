@@ -20,7 +20,7 @@ export default function Navbar() {
     `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
       isActive
         ? 'text-accent-400 bg-accent-500/10'
-        : 'text-slate-300 hover:text-white hover:bg-white/5'
+        : 'text-slate-700 hover:text-slate-900 hover:bg-white/5'
     }`;
 
   return (
@@ -30,7 +30,7 @@ export default function Navbar() {
           {/* ── Logo ────────────────────────────────────────────────── */}
           <Link to="/" className="flex items-center gap-2 group" onClick={closeMobile}>
             <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-accent-500 to-accent-400 shadow-lg shadow-accent-500/25 group-hover:shadow-accent-500/40 transition-shadow duration-300">
-              <RiMotorbikeFill className="text-xl text-white" />
+              <RiMotorbikeFill className="text-xl text-slate-900" />
             </div>
             <span className="text-xl font-bold gradient-text hidden sm:block">BikeAuction</span>
           </Link>
@@ -61,15 +61,15 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             {isAuthenticated ? (
               <>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-500 to-accent-400 flex items-center justify-center text-xs font-bold text-white">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50/50 border border-slate-300/50">
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-500 to-accent-400 flex items-center justify-center text-xs font-bold text-slate-900">
                     {user?.name?.charAt(0)?.toUpperCase() || 'U'}
                   </div>
-                  <span className="text-sm font-medium text-slate-300">{user?.name}</span>
+                  <span className="text-sm font-medium text-slate-700">{user?.name}</span>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-400 hover:text-red-400 rounded-lg hover:bg-red-500/10 transition-all duration-300"
+                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-600 hover:text-red-400 rounded-lg hover:bg-red-500/10 transition-all duration-300"
                 >
                   <RiLogoutBoxRLine /> Logout
                 </button>
@@ -78,13 +78,13 @@ export default function Navbar() {
               <>
                 <Link
                   to="/login"
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-300"
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 rounded-lg hover:bg-white/5 transition-all duration-300"
                 >
                   <RiLoginBoxLine /> Login
                 </Link>
                 <Link
                   to="/register"
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-accent-500 to-accent-400 rounded-lg hover:from-accent-600 hover:to-accent-500 transition-all duration-300 shadow-lg shadow-accent-500/20"
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-900 bg-gradient-to-r from-accent-500 to-accent-400 rounded-lg hover:from-accent-600 hover:to-accent-500 transition-all duration-300 shadow-lg shadow-accent-500/20"
                 >
                   <RiUserAddLine /> Register
                 </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* ── Mobile Hamburger ─────────────────────────────────────── */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all"
+            className="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-white/5 transition-all"
           >
             {mobileOpen ? <RiCloseLine className="text-2xl" /> : <RiMenuLine className="text-2xl" />}
           </button>
@@ -118,7 +118,7 @@ export default function Navbar() {
 
         {/* Menu Panel */}
         <div
-          className={`absolute top-0 right-0 w-72 h-full bg-slate-900 border-l border-slate-800 p-6 transition-transform duration-300 ${
+          className={`absolute top-0 right-0 w-72 h-full bg-white border-l border-slate-200 p-6 transition-transform duration-300 ${
             mobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -142,16 +142,16 @@ export default function Navbar() {
               </NavLink>
             )}
 
-            <hr className="border-slate-800 my-3" />
+            <hr className="border-slate-200 my-3" />
 
             {isAuthenticated ? (
               <>
                 <div className="flex items-center gap-3 px-3 py-2">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-accent-500 to-accent-400 flex items-center justify-center text-sm font-bold text-white">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-accent-500 to-accent-400 flex items-center justify-center text-sm font-bold text-slate-900">
                     {user?.name?.charAt(0)?.toUpperCase() || 'U'}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white">{user?.name}</p>
+                    <p className="text-sm font-medium text-slate-900">{user?.name}</p>
                     <p className="text-xs text-slate-500">{user?.email}</p>
                   </div>
                 </div>
@@ -166,14 +166,14 @@ export default function Navbar() {
               <>
                 <Link
                   to="/login"
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-white/5 transition-all"
                   onClick={closeMobile}
                 >
                   <RiLoginBoxLine /> Login
                 </Link>
                 <Link
                   to="/register"
-                  className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent-500 to-accent-400 rounded-lg text-center justify-center mt-1"
+                  className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-900 bg-gradient-to-r from-accent-500 to-accent-400 rounded-lg text-center justify-center mt-1"
                   onClick={closeMobile}
                 >
                   <RiUserAddLine /> Register

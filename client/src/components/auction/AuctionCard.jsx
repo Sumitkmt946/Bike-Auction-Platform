@@ -46,7 +46,7 @@ export default function AuctionCard({ auction, index = 0 }) {
 
         {/* Bid count */}
         {bidCount > 0 && (
-          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-sm text-xs font-medium text-slate-300 border border-slate-700/50">
+          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-xs font-medium text-slate-700 border border-slate-300/50">
             {bidCount} bid{bidCount !== 1 ? 's' : ''}
           </div>
         )}
@@ -56,10 +56,10 @@ export default function AuctionCard({ auction, index = 0 }) {
       <div className="p-5">
         {/* Bike info */}
         <div className="mb-3">
-          <h3 className="text-lg font-bold text-white group-hover:text-accent-400 transition-colors line-clamp-1">
+          <h3 className="text-lg font-bold text-slate-900 group-hover:text-accent-400 transition-colors line-clamp-1">
             {bike.name || 'Unnamed Bike'}
           </h3>
-          <p className="text-sm text-slate-400 mt-0.5">
+          <p className="text-sm text-slate-600 mt-0.5">
             {bike.brand} {bike.model && `· ${bike.model}`} {bike.year && `· ${bike.year}`}
           </p>
         </div>
@@ -86,8 +86,8 @@ export default function AuctionCard({ auction, index = 0 }) {
             to={`/auctions/${auction._id}`}
             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
               status === 'active'
-                ? 'bg-gradient-to-r from-accent-500 to-accent-400 text-white hover:from-accent-600 hover:to-accent-500 shadow-lg shadow-accent-500/20'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700'
+                ? 'bg-gradient-to-r from-accent-500 to-accent-400 text-slate-900 hover:from-accent-600 hover:to-accent-500 shadow-lg shadow-accent-500/20'
+                : 'bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-300'
             }`}
           >
             {status === 'active' ? 'Bid Now' : 'View'}

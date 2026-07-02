@@ -44,16 +44,16 @@ export default function Login() {
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-400 shadow-lg shadow-accent-500/25 mb-4">
-              <RiMotorbikeFill className="text-2xl text-white" />
+              <RiMotorbikeFill className="text-2xl text-slate-900" />
             </div>
-            <h1 className="text-2xl font-bold text-white">Welcome Back</h1>
-            <p className="text-sm text-slate-400 mt-1">Sign in to continue bidding</p>
+            <h1 className="text-2xl font-bold text-slate-900">Welcome Back</h1>
+            <p className="text-sm text-slate-600 mt-1">Sign in to continue bidding</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
               <div className="relative">
                 <RiMailLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -69,7 +69,7 @@ export default function Login() {
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Password</label>
               <div className="relative">
                 <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
@@ -83,7 +83,7 @@ export default function Login() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 transition-colors"
                 >
                   {showPassword ? <RiEyeOffLine /> : <RiEyeLine />}
                 </button>
@@ -107,7 +107,7 @@ export default function Login() {
           </form>
 
           {/* Register link */}
-          <p className="text-center text-sm text-slate-400 mt-6">
+          <p className="text-center text-sm text-slate-600 mt-6">
             Don&apos;t have an account?{' '}
             <Link to="/register" className="text-accent-400 hover:text-accent-300 font-medium transition-colors">
               Create one

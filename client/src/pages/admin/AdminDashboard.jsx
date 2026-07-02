@@ -52,10 +52,10 @@ export default function AdminDashboard() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-extrabold text-white">
+          <h1 className="text-3xl font-extrabold text-slate-900">
             Admin <span className="gradient-text">Dashboard</span>
           </h1>
-          <p className="text-slate-400 mt-1">Manage your bike auction platform</p>
+          <p className="text-slate-600 mt-1">Manage your bike auction platform</p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -78,8 +78,8 @@ export default function AdminDashboard() {
         ].map((stat, i) => (
           <div key={i} className={`glass rounded-2xl p-5 bg-gradient-to-br ${stat.bg} border ${stat.border}`}>
             <stat.icon className={`text-2xl ${stat.color} mb-2`} />
-            <p className="text-3xl font-extrabold text-white">{stat.value}</p>
-            <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">{stat.label}</p>
+            <p className="text-3xl font-extrabold text-slate-900">{stat.value}</p>
+            <p className="text-xs text-slate-600 uppercase tracking-wider font-medium mt-1">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -95,7 +95,7 @@ export default function AdminDashboard() {
               <RiMotorbikeFill className="text-accent-400" />
             </div>
             <div>
-              <p className="font-semibold text-white">Manage Bikes</p>
+              <p className="font-semibold text-slate-900">Manage Bikes</p>
               <p className="text-xs text-slate-500">Add, edit, or remove bikes</p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function AdminDashboard() {
               <RiAuctionLine className="text-blue-400" />
             </div>
             <div>
-              <p className="font-semibold text-white">Manage Auctions</p>
+              <p className="font-semibold text-slate-900">Manage Auctions</p>
               <p className="text-xs text-slate-500">Create, start, or end auctions</p>
             </div>
           </div>
@@ -121,8 +121,8 @@ export default function AdminDashboard() {
 
       {/* Recent Auctions Table */}
       <div className="glass rounded-2xl overflow-hidden">
-        <div className="p-5 border-b border-slate-700/30">
-          <h2 className="text-lg font-bold text-white">Recent Auctions</h2>
+        <div className="p-5 border-b border-slate-300/30">
+          <h2 className="text-lg font-bold text-slate-900">Recent Auctions</h2>
         </div>
 
         {recentAuctions.length === 0 ? (
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
                   return (
                     <tr key={auction._id} className="hover:bg-white/[0.02] transition-colors">
                       <td className="px-5 py-4">
-                        <p className="font-medium text-white text-sm">{bike.name || 'N/A'}</p>
+                        <p className="font-medium text-slate-900 text-sm">{bike.name || 'N/A'}</p>
                         <p className="text-xs text-slate-500">{bike.brand}</p>
                       </td>
                       <td className="px-5 py-4">
@@ -157,10 +157,10 @@ export default function AdminDashboard() {
                           {getStatusLabel(auction.status)}
                         </span>
                       </td>
-                      <td className="px-5 py-4 text-xs text-slate-400 hidden sm:table-cell">
+                      <td className="px-5 py-4 text-xs text-slate-600 hidden sm:table-cell">
                         {formatDate(auction.startTime)}
                       </td>
-                      <td className="px-5 py-4 text-xs text-slate-400 hidden md:table-cell">
+                      <td className="px-5 py-4 text-xs text-slate-600 hidden md:table-cell">
                         {formatDate(auction.endTime)}
                       </td>
                       <td className="px-5 py-4 text-sm font-semibold text-accent-400">

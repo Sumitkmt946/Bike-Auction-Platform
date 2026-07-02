@@ -50,7 +50,7 @@ export default function BidPanel({ auction, onBidPlaced }) {
     <div className="glass rounded-2xl p-6 space-y-5">
       {/* ── Header ────────────────────────────────────────────────────── */}
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+        <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
           <RiAuctionLine className="text-accent-400" />
           {isEnded ? 'Final Result' : 'Live Bidding'}
         </h3>
@@ -69,17 +69,17 @@ export default function BidPanel({ auction, onBidPlaced }) {
           pulseKey > 0 ? 'bid-pulse' : ''
         }`}
       >
-        <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-1">
+        <p className="text-xs text-slate-600 uppercase tracking-wider font-medium mb-1">
           {isEnded ? 'Winning Bid' : highestBid > startingPrice ? 'Current Highest Bid' : 'Starting Price'}
         </p>
         <p className="text-3xl font-extrabold gradient-text">{formatCurrency(highestBid)}</p>
 
         {highestBidder && (
-          <p className="text-sm text-slate-400 mt-2 flex items-center gap-1.5">
+          <p className="text-sm text-slate-600 mt-2 flex items-center gap-1.5">
             <span className="w-5 h-5 rounded-full bg-accent-500/20 flex items-center justify-center text-[10px] font-bold text-accent-400">
               {(highestBidder.name || 'U').charAt(0).toUpperCase()}
             </span>
-            {isEnded ? 'Winner' : 'Highest Bidder'}: <span className="text-white font-medium">{highestBidder.name || 'Anonymous'}</span>
+            {isEnded ? 'Winner' : 'Highest Bidder'}: <span className="text-slate-900 font-medium">{highestBidder.name || 'Anonymous'}</span>
           </p>
         )}
       </div>
@@ -88,9 +88,9 @@ export default function BidPanel({ auction, onBidPlaced }) {
       {isEnded && (
         <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/10 to-amber-500/5 border border-amber-500/20 text-center">
           <RiTrophyLine className="text-4xl text-amber-400 mx-auto mb-2" />
-          <p className="text-lg font-bold text-white">Auction Ended</p>
+          <p className="text-lg font-bold text-slate-900">Auction Ended</p>
           {winner && (
-            <p className="text-sm text-slate-400 mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               Won by <span className="text-amber-400 font-semibold">{winner.name || highestBidder?.name || 'Unknown'}</span>
             </p>
           )}
@@ -99,9 +99,9 @@ export default function BidPanel({ auction, onBidPlaced }) {
 
       {/* ── Upcoming State ────────────────────────────────────────────── */}
       {isUpcoming && (
-        <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 text-center">
+        <div className="p-4 rounded-xl bg-slate-50/50 border border-slate-300/50 text-center">
           <RiLockLine className="text-3xl text-slate-500 mx-auto mb-2" />
-          <p className="text-sm text-slate-400">Bidding has not started yet</p>
+          <p className="text-sm text-slate-600">Bidding has not started yet</p>
           <p className="text-xs text-slate-500 mt-1">Starting price: {formatCurrency(startingPrice)}</p>
         </div>
       )}
@@ -110,7 +110,7 @@ export default function BidPanel({ auction, onBidPlaced }) {
       {isActive && isAuthenticated && !isAdmin && (
         <form onSubmit={handlePlaceBid} className="space-y-3">
           <div>
-            <label className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-1 block">
+            <label className="text-xs text-slate-600 uppercase tracking-wider font-medium mb-1 block">
               Your Bid (min: {formatCurrency(minBid)})
             </label>
             <div className="relative">
@@ -153,15 +153,15 @@ export default function BidPanel({ auction, onBidPlaced }) {
 
       {/* Admin notice */}
       {isActive && isAdmin && (
-        <div className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-center">
+        <div className="p-3 rounded-lg bg-slate-50/50 border border-slate-300/50 text-center">
           <p className="text-sm text-slate-500">Admins cannot place bids</p>
         </div>
       )}
 
       {/* Not authenticated */}
       {isActive && !isAuthenticated && (
-        <div className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-center">
-          <p className="text-sm text-slate-400">Please log in to place bids</p>
+        <div className="p-3 rounded-lg bg-slate-50/50 border border-slate-300/50 text-center">
+          <p className="text-sm text-slate-600">Please log in to place bids</p>
         </div>
       )}
     </div>

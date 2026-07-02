@@ -43,12 +43,12 @@ export default function CreateAuction() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
-      <Link to="/admin/auctions" className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors mb-4">
+      <Link to="/admin/auctions" className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900 transition-colors mb-4">
         <RiArrowLeftLine /> Back to Auctions
       </Link>
 
       <div className="glass rounded-2xl p-6 sm:p-8">
-        <h1 className="text-2xl font-extrabold text-white mb-6">
+        <h1 className="text-2xl font-extrabold text-slate-900 mb-6">
           Create <span className="gradient-text">Auction</span>
         </h1>
         <AuctionForm bikes={bikes} onSubmit={handleSubmit} loading={submitting} />
