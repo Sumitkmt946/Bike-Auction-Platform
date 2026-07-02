@@ -32,7 +32,7 @@ describe('Auth API Endpoints', () => {
 
       expect(res.statusCode).toBe(400);
       expect(res.body.success).toBe(false);
-      expect(res.body.error).toMatch(/User already exists/i);
+      expect(res.body.message).toMatch(/already exists/i);
     });
   });
 
