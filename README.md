@@ -3,6 +3,8 @@
 A production-grade, full-stack real-time auction platform for exclusive motorcycles. Built as a comprehensive demonstration of strong engineering fundamentals, clean architecture, and modern web development practices.
 
 ## 🚀 Features
+![Uploading image.png…]()
+
 
 ### User Experience
 - **Real-Time Bidding**: Powered by Socket.IO, bids update instantly across all connected clients without refreshing.
