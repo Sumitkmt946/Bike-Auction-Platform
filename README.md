@@ -3,7 +3,7 @@
 A production-grade, full-stack real-time auction platform for exclusive motorcycles. Built as a comprehensive demonstration of strong engineering fundamentals, clean architecture, and modern web development practices.
 
 ## 🚀 Features
-![Uploading image.png…]()
+<img width="1363" height="689" alt="image" src="https://github.com/user-attachments/assets/b8699050-91ae-413e-bd3d-38426043d642" />
 
 
 ### User Experience
