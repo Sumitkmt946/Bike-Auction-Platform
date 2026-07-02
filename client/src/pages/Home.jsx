@@ -57,14 +57,14 @@ export default function Home() {
               </div>
 
               {/* Image Content */}
-              <div className="relative h-64 lg:h-full hidden md:block">
-                {/* Decorative elements */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="relative h-64 lg:h-full hidden lg:block">
                 <img 
                   src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070&auto=format&fit=crop" 
                   alt="Premium Motorcycle" 
-                  className="absolute inset-0 w-full h-full object-cover object-center mix-blend-overlay opacity-80"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
+                {/* Gradient mask to blend the image smoothly into the left background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-800 via-accent-800/40 to-transparent"></div>
               </div>
             </div>
           </div>
