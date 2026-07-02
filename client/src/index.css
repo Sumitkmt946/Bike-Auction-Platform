@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Styles ────────────────────────────────────────────────────── */
+@layer base {
+  body {
+    @apply bg-slate-950 text-white font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #0f172a;
+  }
+}
+
+/* ── Component Utilities ────────────────────────────────────────────── */
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Stronger glass for nav */
+  .glass-strong {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-400 via-accent-500 to-amber-400;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.5), rgba(245, 158, 11, 0.2), rgba(99, 102, 241, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Bid pulse animation */
+  .bid-pulse {
+    animation: bidPulse 0.6s ease-in-out;
+  }
+
+  /* Fade in */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Slide up */
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  /* Glow effect for buttons */
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3), 0 0 60px rgba(249, 115, 22, 0.1);
+  }
+
+  .glow-orange:hover {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.4), 0 0 80px rgba(249, 115, 22, 0.15);
+  }
+
+  /* Input styling */
+  .input-dark {
+    @apply w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white
+           placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent-500/50
+           focus:border-accent-500/50 transition-all duration-300;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-400 text-white font-semibold
+           rounded-xl hover:from-accent-600 hover:to-accent-500 transition-all duration-300
+           transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50
+           disabled:cursor-not-allowed disabled:hover:scale-100 glow-orange;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-800 border border-slate-700 text-slate-300 font-semibold
+           rounded-xl hover:bg-slate-700 hover:text-white transition-all duration-300
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 bg-red-600/20 border border-red-500/30 text-red-400 font-medium
+           rounded-lg hover:bg-red-600/30 transition-all duration-300;
+  }
+}
+
+/* ── Keyframe Animations ────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bidPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px 5px rgba(249, 115, 22, 0.2);
+  }
+}
+
+@keyframes liveGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+  }
+}
