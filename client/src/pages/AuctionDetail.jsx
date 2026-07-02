@@ -116,62 +116,38 @@ export default function AuctionDetail() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
-      {/* ── Status & Title Bar ──────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <div>
-          <div className="flex items-center gap-3 mb-2">
-            <span
-              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(status)}`}
-            >
-              {status === 'active' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
-              {getStatusLabel(status)}
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">{bike.name || 'Auction'}</h1>
-          <p className="text-slate-600 mt-1">
-            {bike.brand} {bike.model && `· ${bike.model}`} {bike.year && `· ${bike.year}`}
-          </p>
-        </div>
-
-        <div className="shrink-0">
-          <AuctionTimer endTime={auction.endTime} startTime={auction.startTime} status={status} />
-        </div>
-      </div>
-
-      {/* ── Two Column Layout ───────────────────────────────────────── */}
+      {/* ── Two Column Layout (Vutto Style) ───────────────────────────────────────── */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-        {/* LEFT: Images + Details (3 cols) */}
+        {/* LEFT: Images (3 cols) */}
         <div className="lg:col-span-3 space-y-6">
           {/* Image Gallery */}
-          <div className="glass rounded-2xl overflow-hidden">
+          <div className="glass rounded-2xl overflow-hidden border border-slate-200">
             {/* Main Image */}
             <div className="relative aspect-[16/10] bg-white">
               {images.length > 0 ? (
                 <img
                   src={images[selectedImage]}
                   alt={bike.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-slate-50"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
-                  <RiMotorbikeFill className="text-7xl text-slate-700" />
+                <div className="w-full h-full flex items-center justify-center bg-slate-100">
+                  <RiMotorbikeFill className="text-7xl text-slate-300" />
                 </div>
               )}
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
             </div>
 
             {/* Thumbnails */}
             {images.length > 1 && (
-              <div className="flex gap-2 p-3 overflow-x-auto">
+              <div className="flex gap-2 p-3 overflow-x-auto bg-white border-t border-slate-100">
                 {images.map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setSelectedImage(i)}
                     className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === i
-                        ? 'border-accent-500 shadow-lg shadow-accent-500/20'
-                        : 'border-slate-300 hover:border-slate-500 opacity-60 hover:opacity-100'
+                        ? 'border-accent-500 shadow-sm'
+                        : 'border-transparent hover:border-slate-300 opacity-70 hover:opacity-100'
                     }`}
                   >
                     <img src={img} alt={`${bike.name} ${i + 1}`} className="w-full h-full object-cover" />
@@ -180,71 +156,58 @@ export default function AuctionDetail() {
               </div>
             )}
           </div>
-
-          {/* Bike Details */}
-          <div className="glass rounded-2xl p-6 space-y-5">
-            <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-              <RiInformationLine className="text-accent-400" />
-              Bike Details
-            </h2>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { label: 'Brand', value: bike.brand || 'N/A' },
-                { label: 'Model', value: bike.model || 'N/A' },
-                { label: 'Year', value: bike.year || 'N/A' },
-                { label: 'Starting Price', value: formatCurrency(bike.startingPrice) },
-              ].map((item, i) => (
-                <div key={i} className="bg-slate-50/30 rounded-xl p-3 border border-slate-300/20">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">{item.label}</p>
-                  <p className="text-sm font-semibold text-slate-900 mt-1">{item.value}</p>
-                </div>
-              ))}
+          
+          {/* Bike Description */}
+          {bike.description && (
+            <div className="glass rounded-2xl p-6 border border-slate-200">
+              <h2 className="text-xl font-bold text-slate-900 mb-4">Description</h2>
+              <p className="text-sm text-slate-600 leading-relaxed">{bike.description}</p>
             </div>
-
-            {bike.description && (
-              <div>
-                <h3 className="text-sm font-semibold text-slate-700 mb-2">Description</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{bike.description}</p>
-              </div>
-            )}
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="flex items-center gap-3 text-sm">
-                <RiCalendarLine className="text-accent-400" />
-                <div>
-                  <p className="text-slate-500">Start Time</p>
-                  <p className="text-slate-900 font-medium">{formatDate(auction.startTime)}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <RiCalendarLine className="text-accent-400" />
-                <div>
-                  <p className="text-slate-500">End Time</p>
-                  <p className="text-slate-900 font-medium">{formatDate(auction.endTime)}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* RIGHT: Bidding Panel + History (2 cols) */}
+        {/* RIGHT: Details, Bidding Panel + History (2 cols) */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Price summary */}
-          <div className="glass rounded-2xl p-5">
-            <div className="flex items-center justify-between">
+          
+          {/* Product Header Card */}
+          <div className="glass rounded-2xl p-6 border border-slate-200 space-y-5">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(status)}`}
+                >
+                  {status === 'active' && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
+                  {getStatusLabel(status)}
+                </span>
+                <span className="text-sm font-medium text-slate-500">{bike.year || 'N/A'} Model</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                {bike.name || 'Auction'}
+              </h1>
+              <p className="text-slate-500 mt-1 font-medium">
+                {bike.brand} {bike.model && `· ${bike.model}`}
+              </p>
+            </div>
+
+            {/* Price block */}
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
               <div>
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">Starting Price</p>
-                <p className="text-lg font-bold text-slate-700">{formatCurrency(bike.startingPrice)}</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-1">Starting Price</p>
+                <p className="text-xl font-semibold text-slate-700">{formatCurrency(bike.startingPrice)}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-medium">
+                <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-1">
                   {status === 'ended' ? 'Final Bid' : 'Current Bid'}
                 </p>
-                <p className="text-lg font-bold gradient-text">
+                <p className="text-2xl font-black text-accent-600">
                   {formatCurrency(auction.currentBid || auction.highestBid || bike.startingPrice)}
                 </p>
               </div>
+            </div>
+
+            {/* Timer */}
+            <div className="pt-2">
+              <AuctionTimer endTime={auction.endTime} startTime={auction.startTime} status={status} />
             </div>
           </div>
 
