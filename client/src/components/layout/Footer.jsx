@@ -2,14 +2,21 @@ import { Link } from 'react-router-dom';
 import { 
   RiMotorbikeFill, 
   RiHeartFill, 
-  RiTwitterXFill, 
+  RiFacebookFill, 
   RiInstagramFill, 
-  RiGithubFill, 
+  RiYoutubeFill, 
   RiLinkedinFill,
   RiArrowRightLine
 } from 'react-icons/ri';
 
 export default function Footer() {
+  const socialLinks = [
+    { Icon: RiFacebookFill, url: 'https://www.facebook.com/profile.php?id=61560294377030' },
+    { Icon: RiInstagramFill, url: 'https://www.instagram.com/vuttobikes/' },
+    { Icon: RiYoutubeFill, url: 'https://www.youtube.com/@Vuttobikes/shorts' },
+    { Icon: RiLinkedinFill, url: 'https://www.linkedin.com/company/vutto' }
+  ];
+
   return (
     <footer className="relative bg-slate-50 pt-16 pb-8 border-t border-white/5 overflow-hidden">
       {/* Background glow */}
@@ -31,8 +38,8 @@ export default function Footer() {
               The premier destination for motorcycle enthusiasts to discover, bid on, and win exclusive two-wheeled masterpieces from around the globe.
             </p>
             <div className="flex items-center gap-4">
-              {[RiTwitterXFill, RiInstagramFill, RiGithubFill, RiLinkedinFill].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-accent-400 hover:border-accent-500/50 hover:bg-accent-500/10 transition-all duration-300 hover:-translate-y-1">
+              {socialLinks.map(({ Icon, url }, i) => (
+                <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-accent-600 hover:border-accent-500/50 hover:bg-accent-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
                   <Icon className="text-lg" />
                 </a>
               ))}
